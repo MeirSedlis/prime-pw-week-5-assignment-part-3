@@ -2,8 +2,8 @@ console.log('***** Music Collection *****')
 
 // - Create a variable `collection` that starts as an empty array.
 
-const collection = [];
-// ***I DON'T KNOW IF THIS SHOULD BE CONST OR LET BUT IM TRYING CONST***
+let collection = [];
+// ***I DON'T KNOW IF THIS SHOULD BE CONST OR LET BUT IM TRYING LET***
 
 // - Add a function named `addToCollection`. This function should:
 //   - Take in the album's `title`, `artist`, `yearPublished` as input parameters
