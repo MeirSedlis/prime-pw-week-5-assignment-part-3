@@ -37,10 +37,17 @@ console.log('Collection now contains', collection);
 //   - Take in an array parameter. (This allows it to be reused to show any collection, like the results from the find or search.)
 //   - Console.log the number of items in the array.
 //   - Loop over the array and console.log each album's information formatted like: `TITLE by ARTIST, published in YEAR`.
+function showCollection(someArray) {
+    console.log('There are', someArray.length, 'albums in the collection');
+    for (i=0; i<someArray.length;i++){
+        console.log(someArray[i].title, 'by', someArray[i].artist, 'published in', someArray[i].yearPublished);
+    } //end loop
+} // end showCollection
 
 // - Test the `showCollection` function.
 // > When testing your functions, write all tests in the JavaScript file!
 
+showCollection(collection);
 
 
 // - Add a function named `findByArtist`. This function should:
