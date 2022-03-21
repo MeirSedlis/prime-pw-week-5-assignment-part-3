@@ -3,6 +3,8 @@ console.log('***** Music Collection *****')
 // - Create a variable `collection` that starts as an empty array.
 
 let collection = [];
+let album = {};
+
 // ***I DON'T KNOW IF THIS SHOULD BE CONST OR LET BUT IM TRYING LET***
 
 // - Add a function named `addToCollection`. This function should:
@@ -11,11 +13,10 @@ let collection = [];
 //   - Add the new object to the end of the `collection` array
 //   - Return the newly created object
 function addToCollection(title, artist, yearPublished){
-let album ={
-    album.title = title,
-    album.artist = artist,
+    album.title = title;
+    album.artist = artist;
     album.yearPublished = yearPublished
-} // found this syntax on https://www.dofactory.com/javascript/function-objects
+ // found this syntax on https://www.dofactory.com/javascript/function-objects
 collection.push(album)
 return album;
 } // end addToCollection
