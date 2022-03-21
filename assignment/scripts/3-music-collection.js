@@ -10,6 +10,15 @@ let collection = [];
 //   - Create a new object having the above properties
 //   - Add the new object to the end of the `collection` array
 //   - Return the newly created object
+function addToCollection(title, artist, yearPublished){
+let album ={
+    album.title = title,
+    album.artist = artist,
+    album.yearPublished = yearPublished
+} // found this syntax on https://www.dofactory.com/javascript/function-objects
+collection.push(album)
+return album;
+} // end addToCollection
 
 // - Test the `addToCollection` function:
 //   - Add 6 albums to your collection. Aim to have a mix of both same and different artists and published years. (Feel free to share your musical interests, or make stuff up. Totally fine either way.)
