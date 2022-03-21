@@ -2,6 +2,8 @@ console.log('***** Music Collection *****')
 
 // - Create a variable `collection` that starts as an empty array.
 
+const collection = [];
+// ***I DON'T KNOW IF THIS SHOULD BE CONST OR LET BUT IM TRYING CONST***
 
 // - Add a function named `addToCollection`. This function should:
 //   - Take in the album's `title`, `artist`, `yearPublished` as input parameters
@@ -16,6 +18,7 @@ console.log('***** Music Collection *****')
 // > When testing your functions, write all tests in the JavaScript file!
 
 
+
 // - Add a function named `showCollection`. This function should:
 //   - Take in an array parameter. (This allows it to be reused to show any collection, like the results from the find or search.)
 //   - Console.log the number of items in the array.
@@ -23,6 +26,7 @@ console.log('***** Music Collection *****')
 
 // - Test the `showCollection` function.
 // > When testing your functions, write all tests in the JavaScript file!
+
 
 
 // - Add a function named `findByArtist`. This function should:
