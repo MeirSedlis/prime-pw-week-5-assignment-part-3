@@ -48,7 +48,8 @@ function showCollection(someArray) {
 // > When testing your functions, write all tests in the JavaScript file!
 
 showCollection(collection);
-
+addToCollection('Judee Sill', 'Sill, Judee', 1971);
+showCollection(collection);
 
 // - Add a function named `findByArtist`. This function should:
 //   - Take in `artist` (a string) parameter
