@@ -1,23 +1,22 @@
-console.log('***** Music Collection *****')
+console.log('***** Music Collection *****');
 
 // - Create a variable `collection` that starts as an empty array.
 
 let collection = [];
-
 
 // - Add a function named `addToCollection`. This function should:
 //   - Take in the album's `title`, `artist`, `yearPublished` as input parameters
 //   - Create a new object having the above properties
 //   - Add the new object to the end of the `collection` array
 //   - Return the newly created object
-function addToCollection(title, artist, yearPublished){
-  let album ={  }  
+function addToCollection(title, artist, yearPublished) {
+    let album = {}
     album.title = title;
     album.artist = artist;
-    album.yearPublished = yearPublished
- // found this syntax on https://www.dofactory.com/javascript/function-objects
-collection.push(album)
-return album;
+    album.yearPublished = yearPublished;
+    // found this syntax on https://www.dofactory.com/javascript/function-objects
+    collection.push(album);
+    return album;
 } // end addToCollection
 
 // - Test the `addToCollection` function:
@@ -26,12 +25,12 @@ return album;
 //   - After all are added, console.log the `collection` array.
 // > When testing your functions, write all tests in the JavaScript file!
 
-console.log('Added', addToCollection('Tidal','Apple, Fiona', 1996), 'to the collection!');
-console.log('Added', addToCollection('Say I Am You','The Weepies', 2006), 'to the collection!');
-console.log('Added', addToCollection('Welcome to the Cruel World','Harper, Ben', 1994), 'to the collection!');
-console.log('Added', addToCollection('The Miseducation of Lauryn Hill','Hill, Ms. Lauryn', 1998), 'to the collection!');
-console.log('Added', addToCollection('CINCORIGINALS','Nwigwe, Tobe', 2020), 'to the collection!');
-console.log('Added', addToCollection('All at Once','Screaming Females', 2018), 'to the collection!');
+console.log('Added', addToCollection('Tidal', 'Apple, Fiona', 1996), 'to the collection!');
+console.log('Added', addToCollection('Say I Am You', 'The Weepies', 2006), 'to the collection!');
+console.log('Added', addToCollection('Welcome to the Cruel World', 'Harper, Ben', 1994), 'to the collection!');
+console.log('Added', addToCollection('The Miseducation of Lauryn Hill', 'Hill, Ms. Lauryn', 1998), 'to the collection!');
+console.log('Added', addToCollection('CINCORIGINALS', 'Nwigwe, Tobe', 2020), 'to the collection!');
+console.log('Added', addToCollection('All at Once', 'Screaming Females', 2018), 'to the collection!');
 console.log('Collection now contains', collection);
 
 // - Add a function named `showCollection`. This function should:
