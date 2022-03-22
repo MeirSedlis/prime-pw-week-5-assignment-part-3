@@ -75,3 +75,45 @@ console.log('Searching for albums by Ben Harper, expect 1 result =>', findByArti
 console.log('Searching for albums by Dolly Parton , expect empty array =>', findByArtist('Parton, Dolly'));
 addToCollection('When The Pawn...', 'Apple, Fiona', 1999);
 console.log('Searching for albums by Fiona Apple, expect 2 results =>', findByArtist('Apple, Fiona'));
+
+
+// - Create a function called `search`. This function should:
+//   - Take an input parameter for a search criteria object. Create your solution based on a search object that has these properties:
+//   ```
+//   { artist: 'Ray Charles', year: 1957 }
+//   ```
+//   - The returned output from `search` should meet these requirements:
+//     - Return a new array of all items in the `collection` matching *all* of the search criteria.
+//     - If no results are found, return an empty array.
+//     - If there is no search object or an empty search object provided as input, then return all albums in the `collection`.
+
+function search(inp0, inp1) {
+    let results = collection;
+    for (i = 0; i < collection.length; i++) {
+        if (inp0 === collection[i].artist
+            || inp1 === collection[i].artist
+            || inp0 === collection[i].title
+            || inp1 === collection[i].title
+            || inp0 === collection[i].yearPublished
+            || inp1 === collection[i].yearPublished){
+                
+            }
+    } // end if found
+    return results
+    console.log(results)
+} // end search
+
+console.log('testing search', search('Charles, Ray', 1957));
+
+// - Add an array of `tracks` to your album objects. Each track should have a `name` and `duration`. You will need to update the functions to support this new property:
+//   - Update the `addToCollection` function to also take an input parameter for the array of tracks.
+//   - Update `search` to allow a `trackName` search criteria.
+//   - Update the `showCollection` function to display the list of tracks for each album with its name and duration.
+// ```
+//     TITLE by ARTIST, published in YEAR:
+//     1. NAME: DURATION
+//     2. NAME: DURATION
+//     3. NAME: DURATION
+//     TITLE by ARTIST, published in YEAR:
+//     1. NAME: DURATION
+//     2. NAME
