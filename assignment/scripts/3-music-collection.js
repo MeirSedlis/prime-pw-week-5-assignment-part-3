@@ -88,7 +88,7 @@ console.log('Searching for albums by Fiona Apple, expect 2 results =>', findByAr
 //     - If there is no search object or an empty search object provided as input, then return all albums in the `collection`.
 
 function search(inp0, inp1) {
-    let results = collection;
+    let results = [];
     for (i = 0; i < collection.length; i++) {
         if (inp0 === collection[i].artist
             || inp1 === collection[i].artist
@@ -96,7 +96,7 @@ function search(inp0, inp1) {
             || inp1 === collection[i].title
             || inp0 === collection[i].yearPublished
             || inp1 === collection[i].yearPublished){
-                
+                results.push(collection[i]);
             }
     } // end if found
     return results
@@ -104,6 +104,7 @@ function search(inp0, inp1) {
 } // end search
 
 console.log('testing search', search('Charles, Ray', 1957));
+console.log('testing search', search('Charles, Ray', 1999));
 
 // - Add an array of `tracks` to your album objects. Each track should have a `name` and `duration`. You will need to update the functions to support this new property:
 //   - Update the `addToCollection` function to also take an input parameter for the array of tracks.
