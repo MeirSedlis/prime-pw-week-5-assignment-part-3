@@ -119,20 +119,20 @@ console.log('testing searchPartials, expect two results =>', searchPartials('Tid
 //     - If no results are found, return an empty array.
 //     - If there is no search object or an empty search object provided as input, then return all albums in the `collection`.
 
-let input ={
+let input = {
     artist: 'Ray Charles',
     yearPublished: 1957
 };
 
 function search(input) {
     let results = [];
-    // if (Object.keys(input).length === 0 ) {
-    //     results = collection;
-    //     return results;
-    // } end if null
+    if (input !== Object || Object.values(input) === []) {
+        results = collection;
+        return results;
+    } // end if undefined
     for (record of collection) {
-        if (input.artist === collection[record].artist 
-            || input.yearPublished === collection[record].yearPublished) {
+        if (input.artist === collection[record].artist
+            && input.yearPublished === collection[record].yearPublished) {
             results.push(collection[i]);
         }
     } // end for loop
