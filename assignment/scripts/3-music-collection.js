@@ -60,7 +60,7 @@ function findByArtist(artist){
 let results = [];
 for(i=0, i<collection.length; i++){
     if(artist === collection[i].artist){
-        results.push(collection[i].artist)
+        results.push(collection[i].artist);
     }
 } // end artist found
 return results 
@@ -69,4 +69,10 @@ return results
 // - Test the `findByArtist` function. Make sure to test with an artist you know is in the collection, as well as an artist you know is not in your collection. Check that for artists with multiple matches, all are found.
 // > When testing your functions, write all tests in the JavaScript file!
 
+console.log('testing findByArtist!');
+findByArtist('The Weepies');
+findByArtist('Parton, Dolly');
+addToCollection('When The Pawn...', 'Apple, Fiona', 1999);
+findByArtist('Apple, Fiona');
+showCollection(collection);
 
