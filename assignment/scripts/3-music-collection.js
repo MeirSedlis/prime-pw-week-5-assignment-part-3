@@ -119,7 +119,26 @@ console.log('testing searchPartials, expect two results =>', searchPartials('Tid
 //     - If no results are found, return an empty array.
 //     - If there is no search object or an empty search object provided as input, then return all albums in the `collection`.
 
+function search(input) {
+    let results = [];
+    if (input === null) {
+        results = collection;
+        return results;
+    } //end if null
+    for (record of collection) {
+        if (input === collection[record].album 
+            || input === collection[record].artist 
+            || input === collection[record].yearPublished) {
+            results.push(collection[i]);
+        }
+    } // end for loop
+    return results;
+    console.log(results);
+} // end search
 
+console.log('Testing search function, expect full collection =>', search());
+console.log('Testing search function, expect empty array =>', search('Ray Charles', 1957));
+console.log('Testing search function, expect two results =>', search('Apple, Fiona'));
 
 // - Add an array of `tracks` to your album objects. Each track should have a `name` and `duration`. You will need to update the functions to support this new property:
 //   - Update the `addToCollection` function to also take an input parameter for the array of tracks.
