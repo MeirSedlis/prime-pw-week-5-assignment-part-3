@@ -56,23 +56,22 @@ showCollection(collection);
 //   - Create an array to hold any results, empty to start
 //   - Loop through the `collection` and add any objects with a matching artist to the array.
 //   - Return the array with the matching results. If no results are found, return an empty array.
-function findByArtist(artist){
-let results = [];
-for(i=0, i<collection.length; i++){
-    if(artist === collection[i].artist){
-        results.push(collection[i].artist);
-    }
-} // end artist found
-return results 
+function findByArtist(artist) {
+    let results = [];
+    for (i = 0; i < collection.length; i++) {
+        if (artist === collection[i].artist) {
+            results.push(collection[i]);
+        }
+    } // end artist found
+    return results
+    console.log(results)
 } // end findByArtist
 
 // - Test the `findByArtist` function. Make sure to test with an artist you know is in the collection, as well as an artist you know is not in your collection. Check that for artists with multiple matches, all are found.
 // > When testing your functions, write all tests in the JavaScript file!
 
 console.log('testing findByArtist!');
-findByArtist('The Weepies');
-findByArtist('Parton, Dolly');
+console.log('Searching for albums by Ben Harper, expect 1 result =>', findByArtist('Harper, Ben'));
+console.log('Searching for albums by Dolly Parton , expect empty array =>', findByArtist('Parton, Dolly'));
 addToCollection('When The Pawn...', 'Apple, Fiona', 1999);
-findByArtist('Apple, Fiona');
-showCollection(collection);
-
+console.log('Searching for albums by Fiona Apple, expect 2 results =>', findByArtist('Apple, Fiona'));
