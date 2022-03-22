@@ -39,7 +39,7 @@ console.log('Collection now contains', collection);
 //   - Loop over the array and console.log each album's information formatted like: `TITLE by ARTIST, published in YEAR`.
 function showCollection(someArray) {
     console.log('There are', someArray.length, 'albums in the collection');
-    for (i=0; i<someArray.length;i++){
+    for (i = 0; i < someArray.length; i++) {
         console.log(someArray[i].title, 'by', someArray[i].artist, 'published in', someArray[i].yearPublished);
     } //end loop
 } // end showCollection
