@@ -126,7 +126,9 @@ let input = {
 
 function search(input) {
     let results = [];
-    if (typeof input !== 'object' || Object.keys(input).length === 0 ) {
+
+
+    if (typeof input !== 'object' || Object.keys(input).length === 0) {
         results = collection;
         return results;
     }  // end if undefined THIS IS WORKING!!!!!! || Object.values(input) === []
@@ -141,8 +143,8 @@ function search(input) {
 } // end search
 
 console.log('Testing search function, expect full collection =>', search());
-console.log('Testing search function, expect empty array =>', search({artist: 'Ray Charles', yearPublished: 1957}));
-console.log('Testing search function, expect two results =>', search({artist: 'Apple, Fiona'}));
+console.log('Testing search function, expect empty array =>', search({ artist: 'Ray Charles', yearPublished: 1957 }));
+console.log('Testing search function, expect two results =>', search({ artist: 'Apple, Fiona' }));
 
 // - Add an array of `tracks` to your album objects. Each track should have a `name` and `duration`. You will need to update the functions to support this new property:
 //   - Update the `addToCollection` function to also take an input parameter for the array of tracks.
