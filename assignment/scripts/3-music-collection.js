@@ -132,10 +132,10 @@ function search(input) {
         results = collection;
         return results;
     }  // end if undefined THIS IS WORKING!!!!!! || Object.values(input) === []
-    for (record of collection) {
-        if (input.artist === collection[record].artist
-            && input.yearPublished === collection[record].yearPublished) {
-            results.push(collection[record]);
+    for (let record of collection) {
+        if (input.artist === record.artist
+            && input.yearPublished === record.yearPublished) {
+            results.push(record);
         }
     } // end for loop
     return results;
