@@ -9,11 +9,13 @@ let collection = [];
 //   - Create a new object having the above properties
 //   - Add the new object to the end of the `collection` array
 //   - Return the newly created object
+// - Add an array of `tracks` to your album objects. Each track should have a `name` and `duration`. You will need to update the functions to support this new property:
 function addToCollection(title, artist, yearPublished) {
     let album = {}
     album.title = title;
     album.artist = artist;
     album.yearPublished = yearPublished;
+    let tracks = [];
     // found this syntax on https://www.dofactory.com/javascript/function-objects
     collection.push(album);
     return album;
@@ -119,19 +121,13 @@ console.log('testing searchPartials, expect two results =>', searchPartials('Tid
 //     - If no results are found, return an empty array.
 //     - If there is no search object or an empty search object provided as input, then return all albums in the `collection`.
 
-let input = {
-    artist: 'Ray Charles',
-    yearPublished: 1957
-};
 
 function search(input) {
     let results = [];
-
-
     if (typeof input !== 'object' || Object.keys(input).length === 0) {
         results = collection;
         return results;
-    }  // end if undefined THIS IS WORKING!!!!!! || Object.values(input) === []
+    }  // end if undefined 
     for (let record of collection) {
         if (input.artist === record.artist
             && input.yearPublished === record.yearPublished) {
@@ -144,9 +140,9 @@ function search(input) {
 
 console.log('Testing search function, expect full collection =>', search());
 console.log('Testing search function, expect empty array =>', search({ artist: 'Ray Charles', yearPublished: 1957 }));
-console.log('Testing search function, expect two results =>', search({ artist: 'Apple, Fiona' }));
 
-// - Add an array of `tracks` to your album objects. Each track should have a `name` and `duration`. You will need to update the functions to support this new property:
+
+
 //   - Update the `addToCollection` function to also take an input parameter for the array of tracks.
 //   - Update `search` to allow a `trackName` search criteria.
 //   - Update the `showCollection` function to display the list of tracks for each album with its name and duration.
