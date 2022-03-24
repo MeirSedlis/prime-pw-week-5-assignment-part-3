@@ -35,7 +35,7 @@ function addToCollection(title, artist, yearPublished, tracks) {
 //   - After all are added, console.log the `collection` array.
 // > When testing your functions, write all tests in the JavaScript file!
 
-console.log('Added', addToCollection('Tidal', 'Apple, Fiona', 1996), 'to the collection!');
+console.log('Added', addToCollection('Tidal', 'Apple, Fiona', 1996,[{trackName: 'Sleep to Dream', trackDuration: '4:08'},{trackName: 'Sullen Girl', trackDuration: '3:54'},{trackName: 'Shadowboxer', trackDuration: '5:24'},{trackName: 'Criminal', trackDuration: '5:41'},{trackName: 'Slow Like Honey', trackDuration: '5:56'},{trackName: 'The First Taste', trackDuration: '4:46'},{trackName: 'Never Is a Promise', trackDuration: '5:54'},{trackName: 'The Child is Gone', trackDuration: '4:14'},{trackName: 'Pale September', trackDuration: '5:50'},{trackName: 'Carrion', trackDuration: '5:43'}]), 'to the collection!');
 console.log('Added', addToCollection('Say I Am You', 'The Weepies', 2006), 'to the collection!');
 console.log('Added', addToCollection('Welcome to the Cruel World', 'Harper, Ben', 1994), 'to the collection!');
 console.log('Added', addToCollection('The Miseducation of Lauryn Hill', 'Hill, Ms. Lauryn', 1998), 'to the collection!');
