@@ -9,18 +9,20 @@ let collection = [];
 //   - Create a new object having the above properties
 //   - Add the new object to the end of the `collection` array
 //   - Return the newly created object
-// - Add an array of `tracks` to your album objects. Each track should have a `name` and `duration`. You will need to update the functions to support this new property:
-function addToCollection(title, artist, yearPublished, trackName, trackDuration) {
+// - Add an array of `tracks` to your album objects. Each track should have a `name` and `duration`.
+//   - Update the `addToCollection` function to also take an input parameter for the array of tracks.
+function addToCollection(title, artist, yearPublished, tracks) {
     let album = {}
+    let track = {}
     album.title = title;
     album.artist = artist;
     album.yearPublished = yearPublished;
-    album.track = {
-        trackName: trackName,
-        trackDuration: trackDuration
+    album.tracks = [];
+    for (track of album.tracks){
+    track.trackName = trackName;
+    track.trackDuration = trackDuration;
+    album.tracks.push(track);
     }
-    // album.track = trackDuration;
-    // found this syntax on https://www.dofactory.com/javascript/function-objects
     collection.push(album);
     return album;
 } // end addToCollection
@@ -28,7 +30,7 @@ function addToCollection(title, artist, yearPublished, trackName, trackDuration)
 
 
 // - Test the `addToCollection` function:
-//   - Add 6 albums to your collection. Aim to have a mix of both same and different artists and published years. (Feel free to share your musical interests, or make stuff up. Totally fine either way.)
+//   - Add 6 albums to your collection. Aim to have a mix of both same and different artists and published years.
 //   - Console.log each album as added using the returned value.
 //   - After all are added, console.log the `collection` array.
 // > When testing your functions, write all tests in the JavaScript file!
@@ -42,7 +44,7 @@ console.log('Added', addToCollection('All at Once', 'Screaming Females', 2018), 
 console.log('Collection now contains', collection);
 
 // - Add a function named `showCollection`. This function should:
-//   - Take in an array parameter. (This allows it to be reused to show any collection, like the results from the find or search.)
+//   - Take in an array parameter. 
 //   - Console.log the number of items in the array.
 //   - Loop over the array and console.log each album's information formatted like: `TITLE by ARTIST, published in YEAR`.
 function showCollection(someArray) {
@@ -75,7 +77,7 @@ function findByArtist(artist) {
     console.log(results)
 } // end findByArtist
 
-// - Test the `findByArtist` function. Make sure to test with an artist you know is in the collection, as well as an artist you know is not in your collection. Check that for artists with multiple matches, all are found.
+// - Test the `findByArtist` function.
 // > When testing your functions, write all tests in the JavaScript file!
 
 console.log('testing findByArtist!');
@@ -85,15 +87,7 @@ addToCollection('When The Pawn...', 'Apple, Fiona', 1999);
 console.log('Searching for albums by Fiona Apple, expect 2 results =>', findByArtist('Apple, Fiona'));
 
 
-// - Create a function called `search`. This function should:
-//   - Take an input parameter for a search criteria object. Create your solution based on a search object that has these properties:
-//   ```
-//   { artist: 'Ray Charles', year: 1957 }
-//   ```
-//   - The returned output from `search` should meet these requirements:
-//     - Return a new array of all items in the `collection` matching *all* of the search criteria.
-//     - If no results are found, return an empty array.
-//     - If there is no search object or an empty search object provided as input, then return all albums in the `collection`.
+// - Create a function called `search`.
 
 function searchPartials(inp0, inp1) {
     let results = [];
@@ -115,7 +109,7 @@ console.log('testing searchPartials, expect empty array =>', searchPartials('Cha
 console.log('testing searchPartials, expect one result =>', searchPartials('Charles, Ray', 1999));
 console.log('testing searchPartials, expect two results =>', searchPartials('Tidal', 2006));
 
-
+//I left this in because I put a lot of work into it but there's a search that meets the requirements below.
 
 // - Create a function called `search`. This function should:
 //   - Take an input parameter for a search criteria object. Create your solution based on a search object that has these properties:
@@ -126,7 +120,7 @@ console.log('testing searchPartials, expect two results =>', searchPartials('Tid
 //     - Return a new array of all items in the `collection` matching *all* of the search criteria.
 //     - If no results are found, return an empty array.
 //     - If there is no search object or an empty search object provided as input, then return all albums in the `collection`.
-
+//   - Update `search` to allow a `trackName` search criteria. NOTE HERE: I INTERPRETED THIS AS OVERRIDING the ALL from line 118 and changed my code from && to ||
 
 function search(input) {
     let results = [];
@@ -136,7 +130,7 @@ function search(input) {
     }  // end if undefined 
     for (let record of collection) {
         if (input.artist === record.artist
-            && input.yearPublished === record.yearPublished) {
+            || input.yearPublished === record.yearPublished) {
             results.push(record);
         }
     } // end for loop
@@ -149,8 +143,8 @@ console.log('Testing search function, expect empty array =>', search({ artist: '
 
 
 
-//   - Update the `addToCollection` function to also take an input parameter for the array of tracks.
-//   - Update `search` to allow a `trackName` search criteria.
+
+
 //   - Update the `showCollection` function to display the list of tracks for each album with its name and duration.
 // ```
 //     TITLE by ARTIST, published in YEAR:
