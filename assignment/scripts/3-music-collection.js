@@ -10,16 +10,22 @@ let collection = [];
 //   - Add the new object to the end of the `collection` array
 //   - Return the newly created object
 // - Add an array of `tracks` to your album objects. Each track should have a `name` and `duration`. You will need to update the functions to support this new property:
-function addToCollection(title, artist, yearPublished) {
+function addToCollection(title, artist, yearPublished, trackName, trackDuration) {
     let album = {}
     album.title = title;
     album.artist = artist;
     album.yearPublished = yearPublished;
-    let tracks = [];
+    album.track = {
+        trackName: trackName,
+        trackDuration: trackDuration
+    }
+    // album.track = trackDuration;
     // found this syntax on https://www.dofactory.com/javascript/function-objects
     collection.push(album);
     return album;
 } // end addToCollection
+
+
 
 // - Test the `addToCollection` function:
 //   - Add 6 albums to your collection. Aim to have a mix of both same and different artists and published years. (Feel free to share your musical interests, or make stuff up. Totally fine either way.)
