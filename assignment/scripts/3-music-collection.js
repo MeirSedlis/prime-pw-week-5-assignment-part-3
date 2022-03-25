@@ -129,12 +129,18 @@ function search(input) {
         ) {
             results.push(record);
         }
+        // let trackSearchArray = Object.values(collection[record].tracks);
+        // if (trackSearchArray.includes(input)){
+    
+        // results.push(record);  THIS WAS A NICE THOUGHT
+            }
     } // end for loop
     return results;
     console.log(results);
 } // end search
 
 console.log('Testing search function, expect full collection =>', search());
+console.log('Testing search function, expect one result =>', search('Never is a Promise'));
 console.log('Testing search function, expect empty array =>', search({ artist: 'Ray Charles', yearPublished: 1957 }));
 
 
