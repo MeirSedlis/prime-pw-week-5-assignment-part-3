@@ -13,16 +13,10 @@ let collection = [];
 //   - Update the `addToCollection` function to also take an input parameter for the array of tracks.
 function addToCollection(title, artist, yearPublished, tracks) {
     let album = {}
-    let track = {}
     album.title = title;
     album.artist = artist;
     album.yearPublished = yearPublished;
-    album.tracks = [];
-    for (track of album.tracks){
-    track.trackName = trackName;
-    track.trackDuration = trackDuration;
-    album.tracks.push(track);
-    }
+    album.tracks = tracks;
     collection.push(album);
     return album;
 } // end addToCollection
@@ -35,13 +29,14 @@ function addToCollection(title, artist, yearPublished, tracks) {
 //   - After all are added, console.log the `collection` array.
 // > When testing your functions, write all tests in the JavaScript file!
 
-console.log('Added', addToCollection('Tidal', 'Apple, Fiona', 1996,[{trackName: 'Sleep to Dream', trackDuration: '4:08'},{trackName: 'Sullen Girl', trackDuration: '3:54'},{trackName: 'Shadowboxer', trackDuration: '5:24'},{trackName: 'Criminal', trackDuration: '5:41'},{trackName: 'Slow Like Honey', trackDuration: '5:56'},{trackName: 'The First Taste', trackDuration: '4:46'},{trackName: 'Never Is a Promise', trackDuration: '5:54'},{trackName: 'The Child is Gone', trackDuration: '4:14'},{trackName: 'Pale September', trackDuration: '5:50'},{trackName: 'Carrion', trackDuration: '5:43'}]), 'to the collection!');
+console.log('Added', addToCollection('Tidal', 'Apple, Fiona', 1996, [{ trackName: 'Sleep to Dream', trackDuration: '4:08' }, { trackName: 'Sullen Girl', trackDuration: '3:54' }, { trackName: 'Shadowboxer', trackDuration: '5:24' }, { trackName: 'Criminal', trackDuration: '5:41' }, { trackName: 'Slow Like Honey', trackDuration: '5:56' }, { trackName: 'The First Taste', trackDuration: '4:46' }, { trackName: 'Never Is a Promise', trackDuration: '5:54' }, { trackName: 'The Child is Gone', trackDuration: '4:14' }, { trackName: 'Pale September', trackDuration: '5:50' }, { trackName: 'Carrion', trackDuration: '5:43' }]), 'to the collection!');
 console.log('Added', addToCollection('Say I Am You', 'The Weepies', 2006), 'to the collection!');
 console.log('Added', addToCollection('Welcome to the Cruel World', 'Harper, Ben', 1994), 'to the collection!');
 console.log('Added', addToCollection('The Miseducation of Lauryn Hill', 'Hill, Ms. Lauryn', 1998), 'to the collection!');
 console.log('Added', addToCollection('CINCORIGINALS', 'Nwigwe, Tobe', 2020), 'to the collection!');
 console.log('Added', addToCollection('All at Once', 'Screaming Females', 2018), 'to the collection!');
 console.log('Collection now contains', collection);
+console.log(collection[0]);
 
 // - Add a function named `showCollection`. This function should:
 //   - Take in an array parameter. 
@@ -120,7 +115,7 @@ console.log('testing searchPartials, expect two results =>', searchPartials('Tid
 //     - Return a new array of all items in the `collection` matching *all* of the search criteria.
 //     - If no results are found, return an empty array.
 //     - If there is no search object or an empty search object provided as input, then return all albums in the `collection`.
-//   - Update `search` to allow a `trackName` search criteria. NOTE HERE: I INTERPRETED THIS AS OVERRIDING the ALL from line 118 and changed my code from && to ||
+//   - Update `search` to allow a `trackName` search criteria. NOTE HERE: I INTERPRETED THIS AS OVERRIDING the ALL from above and changed my code from && to ||
 
 function search(input) {
     let results = [];
@@ -130,7 +125,8 @@ function search(input) {
     }  // end if undefined 
     for (let record of collection) {
         if (input.artist === record.artist
-            || input.yearPublished === record.yearPublished) {
+            || input.yearPublished === record.yearPublished
+        ) {
             results.push(record);
         }
     } // end for loop
