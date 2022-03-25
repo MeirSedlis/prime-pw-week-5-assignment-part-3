@@ -124,23 +124,24 @@ function search(input) {
         return results;
     }  // end if undefined 
     for (let record of collection) {
+    
+            // if (input.trackName === record.trackName){
+            //     results.push(record);
+            // }
+        
         if (input.artist === record.artist
             || input.yearPublished === record.yearPublished
         ) {
             results.push(record);
         }
-        // let trackSearchArray = Object.values(collection[record].tracks);
-        // if (trackSearchArray.includes(input)){
-    
-        // results.push(record);  THIS WAS A NICE THOUGHT
-            }
+            
     } // end for loop
     return results;
     console.log(results);
 } // end search
 
 console.log('Testing search function, expect full collection =>', search());
-console.log('Testing search function, expect one result =>', search('Never is a Promise'));
+console.log('Testing search function for stretch goal NOT FUNCTIONAL YET, expect one result =>', search({trackName:'Shadowboxer'}));
 console.log('Testing search function, expect empty array =>', search({ artist: 'Ray Charles', yearPublished: 1957 }));
 
 
